@@ -11,8 +11,11 @@ var s = new Zotero.Search();
 s.libraryID = ZoteroPane.getSelectedLibraryID();
 s.addCondition(fieldName, 'doesNotContain', prefix);
 s.addCondition('itemTypeID', 'isNot', 1);
+s.addCondition('itemTypeID', 'isNot', 2);
+s.addCondition('itemTypeID', 'isNot', 12);
 s.addCondition('itemTypeID', 'isNot', 13);
 s.addCondition('itemTypeID', 'isNot', 14);
+s.addCondition('itemTypeID', 'isNot', 26);
 s.addCondition('itemTypeID', 'isNot', 27);
 var ids = await s.search();
 await Zotero.DB.executeTransaction(async function () {
